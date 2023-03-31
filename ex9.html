@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Ex9</title>
+</head>
+
+
+<body>
+    <!-- Ex9.1 -->
+    <button onclick="addItems('Apple')"> Apple</button>
+    <button onclick="addItems('Tomato')">Tomato</button>
+    <button onclick="addItems('Eggs')">Eggs</button>
+    <button onclick="clean()">Clear</button>
+    <div id="cart"></div>
+    <!-- Ex9.2 -->
+    <input id="text-box" type="text">
+
+    <button onclick="convert(2.54)"> Convert to inch</button>
+    <button onclick="convert(1/2.54)">Convert to cm</button>
+
+    <div id="result" style></div>
+
+    <script>
+        // Ex9.1
+        const cart = document.getElementById('cart')
+
+        function addItems(food) {
+
+            let element = document.createElement('div');
+            element.innerText = food;
+            cart.appendChild(element);
+        }
+        function clean() {
+            cart.innerHTML = '';
+        };
+
+        // Ex9.2
+        let textBox = document.getElementById('text-box');
+        const result = document.getElementById('result');
+
+
+        function convertInch() {
+            let textBoxValue = +textBox.value;
+            result.innerText = textBoxValue * 2.54;
+            textBox.value = '';
+        }
+        function convertCm() {
+            let textBoxValue = +textBox.value;
+            result.innerText = textBoxValue / 2.54;
+            textBox.value = '';
+        }
+        function convert(number) {
+            let textBoxValue = +textBox.value;
+            result.innerText = textBoxValue * number;
+            textBox.value = '';
+        }
+
+
+    </script>
+</body>
+
+</html>

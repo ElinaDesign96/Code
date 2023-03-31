@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Ex12.1</title>
+</head>
+
+<body>
+    <script>
+
+        function aboveFreezing(temps) {
+
+            let newArray = temps.filter(function (temp) {
+                return temp > 0;
+            });
+            console.log(newArray);
+        }
+
+        aboveFreezing([-1, 0, 5, 4, 6]);
+
+
+        function removeRed(objects) {
+
+            let newArray1 = objects.filter(function (object) {
+                return object.color !== 'red';
+            });
+            console.log(newArray1);
+        }
+
+        removeRed([{ name: 'orange', color: 'red' }, { name: 'apple', color: 'green' }]);
+
+        function fiveAndGreaterOnly(arr) {
+            return arr.filter(function (arrN) {
+                return arrN >= 5;
+            })
+        }
+        fiveAndGreaterOnly([3, 6, 8, 2]);
+
+        function evensOnly(numbers) {
+            return numbers.filter(function (number) {
+                return number % 2 == 0;
+            })
+        }
+        evensOnly([3, 6, 8, 2]);
+
+        function fiveCharactersOrFewerOnly(arr) {
+            return arr.filter(function (element) {
+                return element.length <= 5;
+            })
+        }
+        function peopleWhoBelongToTheIlluminati(arr) {
+            return arr.filter(function (club) {
+                return club.member == true;
+            })
+        }
+
+        peopleWhoBelongToTheIlluminati([
+            { name: "Angelina Jolie", member: true },
+            { name: "Eric Jones", member: false },
+            { name: "Paris Hilton", member: true },
+            { name: "Kayne West", member: false },
+            { name: "Bob Ziroll", member: true }
+        ])
+
+        function ofAge(arr) {
+            return arr.filter(function (person) {
+                return person.age >= 18;
+            })
+        }
+
+        function removeRed(foodArray) {
+            return foodArray.filter(function (food) {
+                return food.color !== 'red';
+            })
+        }
+
+        removeRed([{ name: 'apple', color: 'green' }, { name: 'orange', color: 'red' }])
+
+        let arrayOld = ['car', 'omar', 'balagan', 'tratatatatatata'];
+        let arrayNew = [];
+        for (i = 0; i = arrayOld.length; i++) {
+            arrayNew.push[i] + ' - this is a new element';
+        }
+
+        console.log(arrayNew);
+
+
+        let arrayOld1 = ['car', 'omar', 'balagan', 'tratatatatatata'];
+
+
+        for (i = 0; i < arrayOld.length; i++) {
+
+            let x = arrayOld[i] + ' -this is a new element in a new array'
+            console.log(x);
+        }
+
+        for (item of arrayOld) {
+            console.log(item + ' hello');
+        }
+
+
+
+        arrayOld.forEach(printBrand)
+
+        function printBrand(param, i) {
+
+            console.log(`${param} => ${i}`);
+        }
+
+    </script>
+</body>
+
+</html>

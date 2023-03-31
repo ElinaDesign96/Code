@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>tutorial</title>
+</head>
+
+<body>
+    <input id="new-todo-title" type="text" />
+    <input id="date-picker" type="date" />
+    <button onclick="addTodo()"> Add Todo</button>
+    <div id="todo-list"></div>
+
+    <script>
+        let todos = [{
+            title: 'Get groceries',
+            dueDate: '2021-10-04',
+            id: 'id1'
+        }, {
+            title: 'Wash car',
+            dueDate: '2021-02-03',
+            id: 'id2'
+        }, {
+            title: 'Make dinner',
+            dueDate: '2021-03-04',
+            id: 'id3'
+        }];
+
+
+        const todoList = document.getElementById('todo-list');  //grabs the HTML div-big one
+
+        render();
+
+        function addTodo() {
+
+            const textbox = document.getElementById('new-todo-title');
+            const title = textbox.value;
+            const datePicker = document.getElementById('date-picker');
+            const dueDate = datePicker.value;
+            const id = new Date().getTime();
+            // title.id = id;
+            // dueDate.id = id;
+
+            let todo = {
+                title: title, dueDate: dueDate,
+                id: id
+            };
+
+
+            // todos.push({
+            //     title: title,
+            //     dueDate: dueDate,
+            //     id: id
+            // });
+
+            textbox.value = '';
+            insertTodoDiv(todo);
+            // const deleteButton = document.createElement('button')
+            // deleteButton.innerText = 'Delete'
+            // deleteButton.id = id;
+            // deleteButton.onclick = deleteTodo;
+
+            // const element = document.createElement('div');
+            // element.id = 'div' + id;
+            // element.innerText = title + ' ' + dueDate + id;
+            // element.appendChild(deleteButton);
+            // todoList.appendChild(element);
+
+            // render();
+        }
+        function deleteTodo(event) {
+            const deleteButton = event.target;
+            const idToDelete = deleteButton.id;
+            // todos = todos.filter(function (todo) {
+            //     return todo.id !== idToDelete
+            // })
+
+            let divToDelete = document.getElementById('div' + deleteButton.id);
+            divToDelete.remove();
+
+        }
+
+        function render() {
+            // const div = document.getElementById('todo-list')
+            // div.innerHTML = ''
+
+            todos.forEach(function (todo) {
+
+                insertTodoDiv(todo);
+
+                // const element = document.createElement('div');
+                // element.id = 'div' + todo.id;
+                // element.innerText = todo.title + ' ' + todo.dueDate + ' ' + todo.id;
+
+                // const deleteButton = document.createElement('button')
+                // deleteButton.innerText = 'Delete';
+                // deleteButton.style.marginLeft = '12px';
+                // deleteButton.onclick = deleteTodo;
+                // deleteButton.id = todo.id;
+                // element.appendChild(deleteButton);
+                // todoList.appendChild(element);
+            });
+
+        };
+
+        function insertTodoDiv(todo) {
+            const element = document.createElement('div');
+            element.id = 'div' + todo.id;
+            element.innerText = todo.title + ' ' + todo.dueDate + ' ' + todo.id;
+
+            const deleteButton = document.createElement('button')
+            deleteButton.innerText = 'Delete';
+            deleteButton.style.marginLeft = '12px';
+            deleteButton.onclick = deleteTodo;
+            deleteButton.id = todo.id;
+            element.appendChild(deleteButton);
+            todoList.appendChild(element);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

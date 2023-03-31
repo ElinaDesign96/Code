@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ex12</title>
+</head>
+
+<body>
+    <div id="div-todisplay"></div>
+    <script>
+        // ex12.1
+        function aboveFreezing(temps) {
+
+            const newArray = temps.filter(function (temp) {
+
+                return temp >= 0;
+            })
+            console.log(newArray);
+            return newArray;
+        }
+        aboveFreezing([6, -1, -5, -6, 1, 0]);
+        // Ex12.2
+
+        let arrayObjects = [{ name: ' Apple ', color: 'red' }, { name: ' Orange ', color: ' orange' }, { name: 'Cucumber', color: 'green' }]
+        function removeRed(foodArray) {
+
+            return foodArray.filter(function (food) {
+                return food.color !== 'red';
+            });
+        }
+
+        let div = document.getElementById("div-todisplay");
+        let nonRed = removeRed(arrayObjects)
+        console.log(nonRed)
+        nonRed.forEach(function (object) {
+            div.innerHTML += '<div>' + ' ' + '</div>';
+            document.body.appendChild(div);
+
+        })
+
+
+
+
+        // removeRed([{ name: 'Apple', color: 'red' }, { name: 'Orange', color: 'orange' }, { name: 'Cucumber', color: 'green' }]);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

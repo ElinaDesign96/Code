@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ex11</title>
+</head>
+
+<body>
+    <div id="total-result" style="
+    width:60px;
+    height:30px;
+    padding-top: 8px;
+    border: solid 1px rgb(154, 135, 140);
+    border-radius: 5px;
+    margin-top: 15px;
+    align-content: center;
+    font-size: 20px;
+    text-align:center;"></div>
+    <script>
+
+        // const todo = [{
+        //     name: 'Apple',
+        //     price: 3
+        // }, {
+        //     name: 'Orange',
+        //     price: 4
+        // }, {
+        //     name: 'Egg',
+        //     price: 2
+        // }];
+
+        let total = 0;
+
+        function createCart(foodPrices) {
+            const foods = Object.keys(foodPrices);
+
+
+            foods.forEach(function (food) {
+                const line = document.createElement('div');
+                const foodPrice = foodPrices[food];
+                line.innerText = food + ' $' + foodPrice;
+                const addButton = document.createElement('button');
+                addButton.innerText = 'Add';
+                addButton.style = 'margin-left:15px;';
+                line.appendChild(addButton);
+                document.body.appendChild(line);
+                addButton.onclick = function result() {
+                    total = total + foodPrice;
+                    totalPrice.innerText = total
+                }
+            })
+
+        };
+
+        const totalPrice = document.getElementById('total-result');
+        totalPrice.innerText = '0';
+        document.body.appendChild(totalPrice);
+
+        let buttonClear = document.createElement('button');
+        buttonClear.innerText = 'Clear';
+        document.body.appendChild(buttonClear);
+        buttonClear.style = 'margin-top: 10px;';
+        buttonClear.onclick = clear;
+        function clear() {
+            totalPrice.innerText = '0'
+        }
+
+        createCart({ Apple: 3, Orange: 4, Egg: 2 });
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        let info = {
+            profession: ' engineer ',
+            pais: 'France',
+            wife: ' a beautiful girl ',
+            children: 2
+        }
+
+        function tellFortune(fact) {
+            let text = document.createElement('div');
+            text.innerText = 'You will be an' + fact.profession + 'in' + fact.pais + 'and married to' + fact.wife + 'with' + fact.children + 'kids';
+            document.body.appendChild(text);
+        }
+
+        tellFortune(info);
+
+
+
+    </script>
+</body>
+
+</html>

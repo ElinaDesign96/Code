@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ex10</title>
+
+</head>
+
+<body>
+    <div id="receipt"></div>
+    <script>
+
+        // fruts array
+        const frutsArray = [{
+            name: 'Apple',
+            price: 4,
+            quantity: 2
+
+        }, {
+            name: 'Orange',
+            price: 3,
+            quantity: 3
+        }]
+
+        // verduras array
+
+        const verdurasArray = [{
+            name: 'potato',
+            price: 5,
+            quantity: 2
+
+        }, {
+            name: 'tomato',
+            price: 63,
+            quantity: 3
+        }]
+        displayReceipt(frutsArray); // array = frutsArray
+
+
+
+
+        // let sum = 0
+        // cartArray.forEach(function (cart) {
+        //     sum = sum + cart.price * cart.quantity;
+        // })
+        // console.log(sum);
+
+        function displayReceipt(array) {
+            let total = 0;
+            let divRec = document.getElementById('receipt');
+            divRec.innerHTML = '';
+            array.forEach(function (cart) {
+                let line = document.createElement('div');
+                line.innerText = cart.name + ' $' + cart.price + '*' + cart.quantity + '=' + ' $' + cart.price * cart.quantity;
+                total = total + cart.price * cart.quantity;
+                divRec.appendChild(line);
+            })
+            let line = document.createElement('div');
+            line.innerText = "Total: " + ' $' + total;
+            divRec.appendChild(line);
+
+        }
+
+
+
+
+        function Exercise() {
+
+            const myObj = { name: "Dave" };
+
+            const anotherObj = {
+                alive: true,
+                answer: 42,
+                hobbies: ["eat", "sleep", "code"],
+                beverage: {
+                    morning: "coffee",
+                    afternoon: "Iced Tea"
+                },
+                action: function () {
+                    return `Time for ${this.beverage.morning}`;
+                }
+            };
+
+            const vehicle = {
+                wheels: 4,
+                engine: function () {
+                    return "Vrooooooom!";
+                }
+            }
+
+            const truck = Object.create(vehicle);
+            truck.doors = 2;
+
+            const car = Object.create(vehicle);
+            car.doors = 4;
+            car.engine = function () {
+                return "Whooosh!";
+            };
+            // console.log(car.engine());
+
+        }
+
+    </script>
+</body>
+
+</html>

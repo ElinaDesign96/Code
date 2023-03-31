@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Ex8</title>
+</head>
+
+<body>
+    <!-- Ex8.1 -->
+
+    <button id="todo-button" onclick="changeButtonText()" style="
+    background-color:rgb(162, 82, 246);
+    width: auto;
+    min-width: 120px;
+    height: 45px;
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    "> Click Me </button>
+
+    <!-- Ex8.2 -->
+
+    <div id="counter" style="
+    width:120px;
+    height:50px;
+    border: solid 1px rgb(154, 135, 140);
+    border-radius: 5px;
+    margin-top: 15px;
+    align-content: center;
+    font-size: 40px;
+    text-align:center;
+    
+    ">0</div>
+
+    <button onclick="increaseNumber()" style="
+    background-color:rgb(240, 110, 145);
+    width: auto;
+    min-width: 57.5px;
+    height: 45px;
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin:15px 0;
+    ">Up </button>
+
+    <!-- Ex8.3 -->
+
+    <button onclick="decreaseNumber()" style="
+    background-color:rgb(72, 90, 148);
+    width: auto;
+    min-width: 57.5px;
+    height: 45px;
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top:15px;
+    margin-left:5px;
+    ">Down </button>
+
+    <!-- Ex8.4 -->
+    <div style="
+    display:grid;
+    grid-template-rows: 45px;
+    gap: 5 px;
+    width: 80px;
+    margin-top:25px;">
+        <input id="todo-title" type="text" />
+        <button onclick="displayTitle()" style="
+        background-color:rgb(93, 170, 171);
+        width: auto;
+        min-width:120px;
+        height: 45px;
+        color:white;
+        font-weight: bold;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        margin-top:15px;
+        margin-left:5px;"> Add Todo</button>
+    </div>
+
+    <script>
+        // Ex8.1
+        function changeButtonText() {
+            let text = 'Done';
+            let button = document.getElementById("todo-button");
+            button.innerText = text;
+        };
+        // Ex8.2
+        let count = 0;
+        function increaseNumber() {
+            count = count + 1;
+            let counter = document.getElementById('counter');
+            counter.innerText = count;
+        };
+        // Ex8.3
+        function decreaseNumber() {
+            count = count - 1;
+            let counter = document.getElementById('counter');
+            counter.innerText = count;
+        };
+        // Ex8.4
+
+        function displayTitle() {
+            let textbox = document.getElementById('todo-title');
+            let title = textbox.value;
+
+            let element = document.createElement('div');
+            element.innerText = title;
+            document.body.appendChild(element)
+            textbox.value = " ";
+
+
+        };
+
+
+
+    </script>
+
+</body>
+
+</html>
